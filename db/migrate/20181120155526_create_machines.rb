@@ -3,7 +3,8 @@ class CreateMachines < ActiveRecord::Migration[5.2]
     create_table :machines do |t|
       t.string :name
       t.string :manufacture_date
-      t.integer :opdb_id
+      t.string :opdb_id
+      t.integer :ipdb_id
 
       t.timestamps
     end

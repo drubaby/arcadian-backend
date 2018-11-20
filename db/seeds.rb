@@ -1,7 +1,25 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
+require 'rest-client'
+require 'byebug'
+require 'json'
+
+#requires opdb id
+OPDB_URL = "https://opdb.org/api/machines"
+# once per hour
+OPDB_ALL_MACHINES_URL = 'https://opdb.org/api/export'
+
+# Get machine info
+# https://opdb.org/api/machines/{opdb_id}
 #
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+# allMachinesGet = RestClient.get(OPDB_ALL_MACHINES_URL + '?api_token=' + OPDB_TOKEN)
+# allMachinesJSON = JSON.parse(allMachinesGet)
+
+machines = JSON.parse(File.read('/Users/drubles/Development/code/Arcadian/arcadian-backend/response.json'))
+
+machines.each do |machine|
+  name = machine["name"]
+  manufacture_date = machine["manufacture_date"]
+  opdb_id = machine["opdb_id"]
+  ipdb_id = machine["ipdb_id"]
+  # byebug
+  Machine.create(name: name, manufacture_date: manufacture_date, opdb_id: opdb_id, ipdb_id: ipdb_id)
+end
