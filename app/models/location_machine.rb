@@ -1,0 +1,3 @@
+class LocationMachine < ApplicationRecord
+  
+end
