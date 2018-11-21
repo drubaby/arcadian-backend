@@ -7,12 +7,6 @@ OPDB_URL = "https://opdb.org/api/machines"
 # once per hour
 OPDB_ALL_MACHINES_URL = 'https://opdb.org/api/export'
 
-# Get machine info
-# https://opdb.org/api/machines/{opdb_id}
-#
-# allMachinesGet = RestClient.get(OPDB_ALL_MACHINES_URL + '?api_token=' + OPDB_TOKEN)
-# allMachinesJSON = JSON.parse(allMachinesGet)
-
 machines = JSON.parse(File.read('/Users/drubles/Development/code/Arcadian/arcadian-backend/machines.json'))
 
 
@@ -36,4 +30,17 @@ locations["locations"].each do |location|
   phone = location["phone"]
   website = location["website"]
   Location.create(name: name, street: street, city: city, state: state, zip: zip, phone: phone, website: website)
+end
+
+# location_machines
+# give lymans 5 machines
+lymans = Location.find_by_name("Lyman's Tavern")
+5.times do |i|
+  LocationMachine.create(location_id: lymans.id, machine_id: (rand(1..2200)))
+end
+
+# give BC 10 machines
+bc = Location.find_by_name("Black Cat")
+10.times do |i|
+  LocationMachine.create(location_id: bc.id, machine_id: (rand(1..2200)))
 end
