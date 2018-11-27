@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2018_11_21_201034) do
   create_table "location_machines", force: :cascade do |t|
     t.integer "location_id"
     t.integer "machine_id"
+    t.boolean "is_working", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
