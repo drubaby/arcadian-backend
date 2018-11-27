@@ -1,9 +1,11 @@
 class LocationsController < ApplicationController
   def index
-    render json: Location.all.to_json
+    render json: Location.all
   end
 
   def show
-    render json: Location.find(params[:id]).to_json
+
+    render json: Location.find(params[:id])
+
   end
 end

@@ -6,6 +6,8 @@ class LocationMachinesController < ApplicationController
   end
 
   def show
+    LocationMachine.find(params[:id])
+    
     render json: LocationMachine.find(params[:id]).to_json
   end
 
