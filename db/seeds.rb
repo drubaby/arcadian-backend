@@ -48,6 +48,6 @@ end
 
 Location.all.each do |location|
   5.times do |i|
-  LocationMachine.create(location_id: lymans.id, machine_id: (rand(1..2200)))
+  LocationMachine.create(location_id: location.id, machine_id: (rand(1..2200)))
 end
 end
