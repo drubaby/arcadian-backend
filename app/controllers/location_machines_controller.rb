@@ -2,13 +2,13 @@ class LocationMachinesController < ApplicationController
 
 
   def index
-    render json: LocationMachine.all.to_json
+    render json: LocationMachine.all
   end
 
   def show
     LocationMachine.find(params[:id])
-    
-    render json: LocationMachine.find(params[:id]).to_json
+
+    render json: LocationMachine.find(params[:id])
   end
 
   def create
