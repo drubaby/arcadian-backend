@@ -4,8 +4,6 @@ class LocationsController < ApplicationController
   end
 
   def show
-
     render json: Location.find(params[:id])
-
   end
 end
