@@ -1,6 +1,7 @@
 class MachineIssuesController < ApplicationController
   def create
-    new_issue = LocationMachine.create(mac_issue_params)
+    # debugger
+    mac_issue = MachineIssue.create(mac_issue_params)
     render json: mac_issue.to_json
   end
 
