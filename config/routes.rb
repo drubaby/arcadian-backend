@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :location_machines, only: [:index, :show, :create, :delete]
   resources :machines, only: [:index, :show]
   resources :locations, only: [:index, :show]
+  get "/machines_at_location/:id", to: "location_machines#find_for_location"
 end

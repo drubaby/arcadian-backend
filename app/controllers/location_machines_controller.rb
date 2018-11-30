@@ -7,8 +7,14 @@ class LocationMachinesController < ApplicationController
 
   def show
     LocationMachine.find(params[:id])
-
     render json: LocationMachine.find(params[:id])
+  end
+
+  # corresponds to custom route /machines_at_location/:id
+  def find_for_location
+    id = params[:id]
+    loc_macs = LocationMachine.where(location_id: id)
+    render json: loc_macs
   end
 
   def create
