@@ -1,5 +1,6 @@
 class LocationMachinesController < ApplicationController
-
+# issue of
+# Machine info, [machine issues]
 
   def index
     render json: LocationMachine.all

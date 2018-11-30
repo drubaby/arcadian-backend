@@ -5,6 +5,15 @@ class MachineIssuesController < ApplicationController
     render json: mac_issue.to_json
   end
 
+  def update_location_by_issue
+    id = params[:location_machine_id]
+    loc_mac = LocationMachine.find(id)
+    location_id = loc_mac.location_id
+    updated_location = Location.find(location_id)
+    render json: updated_location
+  end
+
+
   def index
     render json: MachineIssue.all.to_json
   end
