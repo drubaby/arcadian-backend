@@ -1,6 +1,5 @@
 class MachineIssuesController < ApplicationController
   def create
-    # debugger
     mac_issue = MachineIssue.create(mac_issue_params)
     render json: mac_issue.to_json
   end
@@ -13,7 +12,6 @@ class MachineIssuesController < ApplicationController
     render json: updated_location
   end
 
-
   def index
     render json: MachineIssue.all.to_json
   end
@@ -23,16 +21,17 @@ class MachineIssuesController < ApplicationController
   end
 
   def update
+    debugger
     mac_issue = MachineIssue.find(params[:id]).to_json
     mac_issue.update(mac_issue_params)
     #not sure about this
     render json: mac_issue.to_json
   end
 
-  def delete
+  def destroy
     mac_issue = MachineIssue.find(params[:id])
     mac_issue.destroy()
-    render mac_issue.to_json
+    render json: mac_issue
   end
 
   private
