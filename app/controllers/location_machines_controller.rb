@@ -19,13 +19,8 @@ class LocationMachinesController < ApplicationController
   end
 
   def update_location_by_machine
-    # debugger
     id = params[:location_id]
     updated_location = Location.find(id)
-    # id = params[:location_machine_id]
-    # loc_mac = LocationMachine.find(id)
-    # location_id = loc_mac.location_id
-    # updated_location = Location.find(location_id)
     render json: updated_location
   end
 
