@@ -18,6 +18,17 @@ class LocationMachinesController < ApplicationController
     render json: loc_macs
   end
 
+  def update_location_by_machine
+    # debugger
+    id = params[:location_id]
+    updated_location = Location.find(id)
+    # id = params[:location_machine_id]
+    # loc_mac = LocationMachine.find(id)
+    # location_id = loc_mac.location_id
+    # updated_location = Location.find(location_id)
+    render json: updated_location
+  end
+
   def create
     new_location_machine = LocationMachine.create(loc_mac_params)
     render json: new_location_machine.to_json
@@ -25,11 +36,7 @@ class LocationMachinesController < ApplicationController
 
   def update
     loc_mac = LocationMachine.find(params[:id])
-    # params is a big messy object of all location machines at this location.
-    #where does that come from?
-    # how can we get just the loc_mac i want with the switched attr
     loc_mac.update(loc_mac_params)
-    debugger
     render json: LocationMachine.find(params[:id])
   end
 

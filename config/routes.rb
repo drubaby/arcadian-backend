@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :locations, only: [:index, :show]
   get "/machines_at_location/:id", to: "location_machines#find_for_location"
   post "/update_location_by_issue", to: "machine_issues#update_location_by_issue"
+  post "update_location_by_machine", to: "location_machines#update_location_by_machine"
 
   # resources :location_machines do
   #   resources :machine_issues, only: [:index, :create, :show, :update, :delete]
