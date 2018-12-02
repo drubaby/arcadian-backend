@@ -35,10 +35,10 @@ class LocationMachinesController < ApplicationController
     render json: LocationMachine.find(params[:id])
   end
 
-  def delete
+  def destroy
     location_machine = LocationMachine.find(params[:id])
     location_machine.destroy()
-    render location_machine.to_json
+    render json: location_machine
   end
 
   private
