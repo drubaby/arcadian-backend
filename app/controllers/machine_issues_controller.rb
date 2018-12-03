@@ -17,7 +17,7 @@ class MachineIssuesController < ApplicationController
   end
 
   def show
-    render json: MachineIssue.find(params[:id]).to_json
+    render json: MachineIssue.find(params[:id])
   end
 
   def update
