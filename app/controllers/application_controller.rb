@@ -2,6 +2,7 @@ class ApplicationController < ActionController::API
   # before_action :authorized, only: [:create, :show]
 
   def encode_token(payload)
+    # this should be hidden in an environment variable
     JWT.encode(payload, 'my_secret')
   end
 
