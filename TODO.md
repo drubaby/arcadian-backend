@@ -6,9 +6,12 @@ machine instances are more easily transferred between ppl and locations.
 # Renaming models
 
 * Machines should be renamed to "MachineType" to convey that they are archetypical
+*done*
 
-* LocationMachine should be renamed to "Machine" to convey that is in an *instance* of a machine type
+
+* LocationMachine should be renamed to "Machine" to convey that is in an instance of a machine type
   - Attributes: id, machine_type_id, user_id, location_id
+  *done*
 
 * Rename machine_issues column to be machine_id
 
