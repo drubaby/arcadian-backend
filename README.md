@@ -8,7 +8,7 @@ Arcadian is a pinball arcade management app made to:
 
 ### Motivation
 
-As an active member of the DD Pinball League I wanted to build a practical solution for a frequent problem.
+As an active member of the DC Pinball League I wanted to build a practical solution for a frequent problem.
 
 Arcade owner-operators are generally responsible for the upkeep of their machines, but tend to rely on word of mouth to find out what's not working on their admittedly complex games! Why not allow player to report these directly, in real time?
 
