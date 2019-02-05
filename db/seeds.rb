@@ -16,7 +16,7 @@ machines.each do |machine|
   opdb_id = machine["opdb_id"]
   ipdb_id = machine["ipdb_id"]
   # byebug
-  Machine.create(name: name, manufacture_date: manufacture_date, opdb_id: opdb_id, ipdb_id: ipdb_id)
+  MachineType.create(name: name, manufacture_date: manufacture_date, opdb_id: opdb_id, ipdb_id: ipdb_id)
 end
 
 locations = JSON.parse(File.read('/Users/drubles/Development/code/Arcadian/arcadian-backend/locations.json'))
@@ -36,18 +36,18 @@ end
 # give lymans 5 machines
 lymans = Location.find_by_name("Lyman's Tavern")
 5.times do |i|
-  LocationMachine.create(location_id: lymans.id, machine_id: (rand(1..2200)))
+  Machine.create(location_id: lymans.id, machine_type_id: (rand(1..2200)))
 end
 
 # give BC 10 machines
 bc = Location.find_by_name("Black Cat")
 10.times do |i|
-  LocationMachine.create(location_id: bc.id, machine_id: (rand(1..2200)))
+  Machine.create(location_id: bc.id, machine_type_id: (rand(1..2200)))
 end
 
 
 Location.all.each do |location|
   5.times do |i|
-  LocationMachine.create(location_id: location.id, machine_id: (rand(1..2200)))
-end
+  Machine.create(location_id: location.id, machine_type_id: (rand(1..2200)))
+  end
 end

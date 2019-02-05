@@ -1,5 +1,5 @@
 class RenameMachinesToMachineTypes < ActiveRecord::Migration[5.2]
   def change
-    rename_table :machines, :machine_type
+    rename_table :machines, :machine_types
   end
 end

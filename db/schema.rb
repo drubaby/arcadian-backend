@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_04_230238) do
+ActiveRecord::Schema.define(version: 2019_02_05_004329) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2019_02_04_230238) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "machine_type", force: :cascade do |t|
+  create_table "machine_types", force: :cascade do |t|
     t.string "name"
     t.string "manufacture_date"
     t.string "opdb_id"
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2019_02_04_230238) do
 
   create_table "machines", force: :cascade do |t|
     t.integer "location_id"
-    t.integer "machine_id"
+    t.integer "machine_type_id"
     t.boolean "is_working", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

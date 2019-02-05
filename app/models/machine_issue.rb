@@ -1,3 +1,3 @@
 class MachineIssue < ApplicationRecord
-  belongs_to :location_machine
+  belongs_to :machine
 end
