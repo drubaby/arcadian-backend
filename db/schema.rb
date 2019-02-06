@@ -47,10 +47,10 @@ ActiveRecord::Schema.define(version: 2019_02_05_004329) do
   create_table "machines", force: :cascade do |t|
     t.integer "location_id"
     t.integer "machine_type_id"
+    t.integer "user_id"
     t.boolean "is_working", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|

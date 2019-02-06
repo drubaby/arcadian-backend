@@ -16,8 +16,8 @@ machine instances are more easily transferred between ppl and locations.
 * Rename machine_issues column to be machine_id
   *done*
 
-# Associate users with machines
- - controller action?
+* Associate users with machines
+ - *done* in schema at least
 
 ## *User stories* ##
 
