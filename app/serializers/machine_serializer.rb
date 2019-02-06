@@ -5,8 +5,9 @@ class MachineSerializer < ActiveModel::Serializer
   :location_name,
   :machine_type,
   :machine_issues,
-  :is_working
-  #, :updated_at
+  :is_working,
+  :updated_at
+  # might add created_at at some point
   has_one :machine_type
   has_many :machine_issues
 

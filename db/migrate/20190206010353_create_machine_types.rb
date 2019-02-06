@@ -5,7 +5,6 @@ class CreateMachineTypes < ActiveRecord::Migration[5.2]
       t.string :manufacture_date
       t.string :opdb_id
       t.integer :ipdb_id
-      t.timestamps
     end
   end
 end
