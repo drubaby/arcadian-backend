@@ -4,6 +4,7 @@ class CreateMachineIssues < ActiveRecord::Migration[5.2]
       t.integer :machine_id
       t.string :description
       t.boolean :resolved, default: false
+      t.timestamps
     end
   end
 end

@@ -8,6 +8,7 @@ class CreateLocations < ActiveRecord::Migration[5.2]
       t.string :zip
       t.string :phone
       t.string :website
+      t.timestamps
     end
   end
 end

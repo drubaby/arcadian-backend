@@ -5,6 +5,7 @@ class CreateMachines < ActiveRecord::Migration[5.2]
       t.integer :user_id, default: nil
       t.integer :machine_type_id
       t.boolean :is_working, default: true
+      t.timestamps
     end
   end
 end
