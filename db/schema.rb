@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_05_004329) do
+ActiveRecord::Schema.define(version: 2019_02_06_010528) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,16 +23,12 @@ ActiveRecord::Schema.define(version: 2019_02_05_004329) do
     t.string "zip"
     t.string "phone"
     t.string "website"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "machine_issues", force: :cascade do |t|
     t.integer "machine_id"
     t.string "description"
     t.boolean "resolved", default: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "machine_types", force: :cascade do |t|
@@ -40,17 +36,13 @@ ActiveRecord::Schema.define(version: 2019_02_05_004329) do
     t.string "manufacture_date"
     t.string "opdb_id"
     t.integer "ipdb_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "machines", force: :cascade do |t|
     t.integer "location_id"
-    t.integer "machine_type_id"
-    t.boolean "is_working", default: true
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.integer "user_id"
+    t.integer "machine_type_id"
+    t.boolean "is_working"
   end
 
   create_table "users", force: :cascade do |t|
