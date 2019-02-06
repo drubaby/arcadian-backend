@@ -41,6 +41,6 @@ class MachinesController < ApplicationController
   private
 
   def mac_params
-    params.require(:machine).permit(:id, :user_id, :location_id, :machine_id, :is_working)
+    params.require(:machine).permit(:id, :user_id, :location_id, :machine_type_id, :is_working)
   end
 end
