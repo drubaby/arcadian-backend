@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 2019_02_06_010528) do
     t.integer "location_id"
     t.integer "user_id"
     t.integer "machine_type_id"
-    t.boolean "is_working"
+    t.boolean "is_working", default: true
   end
 
   create_table "users", force: :cascade do |t|

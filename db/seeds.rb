@@ -51,3 +51,5 @@ Location.all.each do |location|
   Machine.create(location_id: location.id, machine_type_id: (rand(1..2200)))
   end
 end
+
+User.create(username: 'drubaby', password: 'pw')

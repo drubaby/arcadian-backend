@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   has_secure_password
   validates :username, uniqueness: { case_sensitive: false }
-  validates :initials, length: { is: 3 }
+  validates :initials, length: { is: 3 }, allow_nil: true
   has_many :machines
   has_many :locations
   has_many :machine_issues
