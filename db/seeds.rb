@@ -48,7 +48,8 @@ end
 
 Location.all.each do |location|
   5.times do |i|
-  Machine.create(location_id: location.id, machine_type_id: (rand(1..2200)))
+  Machine.create(location_id: location.id, machine_type_id: (rand(1..Machine.all.size)))
+  # Does this work? if not revert to 1..1880 or w/e number of machines might be
   end
 end
 

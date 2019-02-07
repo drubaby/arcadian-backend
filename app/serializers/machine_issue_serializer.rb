@@ -5,8 +5,7 @@ class MachineIssueSerializer < ActiveModel::Serializer
     # debugger
     @issue = self.object
     mac = Machine.find(@issue.machine_id)
-    machine = Machine.find(mac.machine_id)
-    machine.name
+    mac.machine_type.name
   end
 
   def location_name
