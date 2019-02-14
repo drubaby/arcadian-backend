@@ -5,9 +5,10 @@ class MachineIssuesController < ApplicationController
   end
 
   def update_location_by_issue
-    id = params[:location_machine_id]
-    loc_mac = LocationMachine.find(id)
-    location_id = loc_mac.location_id
+    # byebug
+    id = params[:machine_id]
+    mac = Machine.find(id)
+    location_id = mac.location_id
     updated_location = Location.find(location_id)
     render json: updated_location
   end
@@ -36,7 +37,7 @@ class MachineIssuesController < ApplicationController
 
   private
   def mac_issue_params
-    params.require(:machine_issue).permit(:location_machine_id, :description, :resolved)
+    params.require(:machine_issue).permit(:machine_id, :description, :resolved)
   end
 
 

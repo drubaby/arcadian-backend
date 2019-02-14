@@ -10,18 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_03_163235) do
+ActiveRecord::Schema.define(version: 2019_02_06_010528) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "location_machines", force: :cascade do |t|
-    t.integer "location_id"
-    t.integer "machine_id"
-    t.boolean "is_working", default: true
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "locations", force: :cascade do |t|
     t.string "name"
@@ -36,18 +28,25 @@ ActiveRecord::Schema.define(version: 2018_12_03_163235) do
   end
 
   create_table "machine_issues", force: :cascade do |t|
-    t.integer "location_machine_id"
+    t.integer "machine_id"
     t.string "description"
     t.boolean "resolved", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "machines", force: :cascade do |t|
+  create_table "machine_types", force: :cascade do |t|
     t.string "name"
     t.string "manufacture_date"
     t.string "opdb_id"
     t.integer "ipdb_id"
+  end
+
+  create_table "machines", force: :cascade do |t|
+    t.integer "location_id", default: nil
+    t.integer "user_id", default: nil
+    t.integer "machine_type_id"
+    t.boolean "is_working", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -55,7 +54,9 @@ ActiveRecord::Schema.define(version: 2018_12_03_163235) do
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
-    t.string "initials"
+    t.string "initials", default: nil
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
